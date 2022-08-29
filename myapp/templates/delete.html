@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+         {% load static %}
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+</head>
+<body>
+<h1> Delete Customer details</h1>
+<form method="post">
+    {% csrf_token %}
+    click yes to confirm
+    <input type="submit" class="btn btn-primary" value="yes">
+    <a  class="btn btn-light" href="{% url 'read' %}" >cancel </a>
+
+
+</form>
+
+</body>
+</html>

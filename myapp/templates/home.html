@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>customer details</title>
+    {% load static %}
+    <link rel="stylesheet" href="{%static 'css/bootstrap.min.css'%}">
+    <link rel="stylesheet" href="{%static 'images/asianet.jpg'%}">
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-dark bg-info">
+    <u1 class="navbar-nav">
+        <li class="nav-item active">
+            <a class="nav-link" href="#">home</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="create">regsiter</a>
+        </li>
+    </u1>
+    </nav>
+<div class="col-8 offset-2">
+    <table class="table table-bordered table-primary">
+        <tr>
+            <th>s.no</th>
+            <th>name</th>
+            <th>address</th>
+            <th>age</th>
+            <th>email</th>
+        </tr>
+        {% for i in data %}
+        <tr>
+            <td>{{i.id}}</td>
+            <td>{{i.name}}</td>
+            <td>{{i.address}}</td>
+            <td>{{i.age}}</td>
+            <td>{{i.email}}</td>
+            <td><a class="btn btn=warninig" href="update/{{i.id}}">Edit</a> </td>
+            <td><a class="btn btn-danger" href="delete/{{i.id}}">Delete</a> </td>
+            <td><a class="btn btn-light" href="payment/">pay</a> </td>
+        </tr>
+        {% endfor %}
+    </table>
+</div>
+</body>
+</html>
